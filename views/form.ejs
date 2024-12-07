@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create File</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS CDN -->
+</head>
+<body class="bg-gray-100 p-6">
+    <nav class="mb-4">
+        <a href="/" class="text-blue-900 hover:text-white font-mono hover:bg-indigo-700  border  rounded-3xl  w-fit px-3 py-1 border-zinc-500 shadow-lg text-xl">Home</a>
+    </nav>
+    <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-6 text-center">Create New File</h2>
+        <form action="/submit" method="get">
+            <div class="mb-4">
+                <label for="filename" class="block text-gray-700 font-semibold mb-2">Filename</label>
+                <input type="text" placeholder="Enter filename" id="filename" name="filename" class="border border-gray-300 rounded-lg py-2 px-4 w-full focus:outline-none focus:ring focus:ring-blue-300" required>
+            </div>
+            
+            <div class="mb-4">
+                <label for="filedata" class="block text-gray-700 font-semibold mb-2">Text</label>
+                <textarea name="filedata" id="filedata" placeholder="Enter your text here..." class="border border-gray-300 rounded-lg py-2 px-4 w-full h-32 focus:outline-none focus:ring focus:ring-blue-300" required></textarea>
+            </div>
+            
+            <button type="submit" class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg w-full hover:bg-blue-700 transition duration-300">Save</button>
+        </form>
+    </div>
+</body>
+</html>

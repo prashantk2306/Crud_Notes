@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update File</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS CDN -->
+</head>
+<body class="bg-gray-100 p-6">
+    <nav><a href="/" class="text-blue-900 hover:text-white font-mono hover:bg-indigo-700  border  rounded-3xl  w-fit px-3 py-1 border-zinc-500 shadow-lg text-xl">Home</a></nav>
+    <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-6 text-center">Update File Name</h2>
+        <form action="/rename" method="get">
+            <!-- Show current filename -->
+            <div class="mb-4">
+                <label class="block font-semibold mb-1">Current File Name:</label>
+                <input type="text" name="currentName" value="<%= filename %>" readonly class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <!-- Input for new filename -->
+            <div class="mb-4">
+                <label class="block font-semibold mb-1">New File Name:</label>
+                <input type="text" name="newName" placeholder="Enter new name" class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <!-- Submit button -->
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded">Update File Name</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File List</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS CDN -->
+</head>
+<body class="bg-gray-100 p-6">
+    <nav class="mb-4">
+        <a href="/form" class="text-white hover:font-medium hover:text-white font-mono hover:bg-green-700 bg-green-500  border  rounded-3xl  w-fit px-3 py-1 border-zinc-500 shadow-lg text-xl">Create</a>
+    </nav>
+    <div class="max-w-screen min-h-screen mx-auto bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-6 text-center font-mono">File List</h2>
+        <div class=" grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 md:grid-cols-2 gap-9">
+         <% if(fileList.length > 0){ %>
+            <% fileList.forEach((file) => { %>
+                <div class="mb-4 p-4 border border-gray-300 rounded-lg shadow-lg flex justify-between flex-col w-80 h-40">
+                    <div>
+                        <h1 class="text-xl font-semibold font-mono mb-2"><%= file.filename %></h1> 
+                        <p class="text-gray-700 font-mono"> 23/10/2024</p>  
+                    </div>  
+                    <div class="flex items-center gap-2">
+                        <!-- Direct hover effect on this link -->
+                        <a href="/show/<%= file.filename %>" class="text-blue-900 font-semibold underline hover:font-medium">read-file</a>
+
+                        <!-- Fixed width to prevent shift -->
+                        <a href="/update/<%= file.filename %>" class="pl-1 pr-1 border w-16 text-center rounded-md hover:bg-indigo-800 hover:font-medium bg-indigo-600 text-white border-zinc-400">Update</a>
+
+                        <!-- Fixed width to prevent shift -->
+                        <a href="/delete/<%= file.filename %>" class="pl-1 pr-1 border w-16 text-center text-white border-zinc-400 rounded-md bg-red-400 
+                            hover:bg-red-500 hover:font-medium">Delete</a>
+                        <a href="/edit/<%= file.filename %>" class="pl-1 pr-1 border w-16 text-center text-white border-zinc-400 rounded-md bg-orange-400 hover:bg-orange-500  hover:font-medium">edit</a>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <h1 class="text-zinc-500 text-3xl font-mono text-center font-serif border border-2 p-4 rounded-md">No Task Yet !!</h1>
+        <% } %>
+        </div>
+    </div>
+</body>
+</html>
